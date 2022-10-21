@@ -1,0 +1,91 @@
+# This file is the stack used in the QA environments (both locally and on the remote server).
+
+# Ref. https://docs.docker.com/compose/compose-file/compose-file-v3/
+version: '3.8'
+
+services:
+  # [redacted] service
+  [redacted]:
+    image: [redacted]/[redacted]_docker_registry/[redacted]:latest
+    # Exposed ports.
+    ports:
+      - target: 8080
+        published: 8080
+    # Restart service on container's failure.
+    deploy:
+      restart_policy:
+        condition: on-failure
+    depends_on:
+      - '[redacted]-db'
+    networks:
+      - 'qa-[redacted]'
+    environment:
+      [redacted]
+
+  # [redacted] database (postgres).
+  [redacted]-db:
+    image: postgres:12.11-alpine
+    # Expose ports to allow testers and devs to collaborate on debugging issues.
+    ports:
+      - target: 5432
+        published: 5432
+    deploy:
+      restart_policy:
+        condition: on-failure
+    # Keep the environment's data in a persisted volume.
+    volumes:
+        - type: volume
+          source: [redacted]-data
+          target: /var/lib/postgresql/data
+    # Configure basic Postgres info.
+    environment:
+      POSTGRES_DB: [redacted]
+      POSTGRES_PASSWORD: [redacted]
+      POSTGRES_USER: [redacted]
+    networks:
+      - 'qa-[redacted]'
+
+  # [redacted] UI service
+  [redacted]-ui:
+    image: [redacted]/[redacted]_docker_registry/[redacted]-ui:${issue}
+    ports:
+      - target: 80
+        published: 80
+
+  # Autoupdate service. Ref: https://github.com/djmaze/shepherd
+  shepherd:
+    image: [redacted]/[redacted]_docker_registry/shepherd
+    # Shepherd needs control of the Docker socket to send and receive commands.
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    # Shepherd must only run on the swarm's manager node.
+    deploy:
+      placement:
+        constraints:
+        - node.role == manager
+    # Shepherd configuration
+    environment:
+      # Checks for updates every 10 minutes.
+      SLEEP_TIME: "10m"
+      # Rollback service if update fails.
+      ROLLBACK_ON_FAILURE: "true"
+      # Use private Artifactory credentials.
+      WITH_REGISTRY_AUTH: "true"
+      # Artifactory service user.
+      REGISTRY_USER: [redacted]
+      # Artifactory host name.
+      REGISTRY_HOST: [redacted]
+      # API Key generated for the service user.
+      REGISTRY_PASSWORD: [redacted]
+
+# Define volumes used in the stack.
+volumes:
+  # Contains data of the [redacted] environment.
+  [redacted]-data:
+
+# Define custom subnets used in the stack.
+networks:
+  # Everything in one subnet.
+  qa-[redacted]:
+    # Ref: https://docs.docker.com/network/
+    driver: overlay

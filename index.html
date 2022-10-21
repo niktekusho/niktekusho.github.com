@@ -1,97 +1,143 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Homepage - Nicola Dal Maso</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
-    
-    <!-- Font Awesome from https://cdnjs.com/libraries/font-awesome -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/regular.min.css" integrity="sha512-aNH2ILn88yXgp/1dcFPt2/EkSNc03f9HBFX0rqX3Kw37+vjipi1pK3L9W08TZLhMg4Slk810sPLdJlNIjwygFw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/solid.min.css" integrity="sha512-uj2QCZdpo8PSbRGL/g5mXek6HM/APd7k/B5Hx/rkVFPNOxAQMXD+t+bG4Zv8OAdUpydZTU3UHmyjjiHv2Ww0PA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>Homepage - Nicola Dal Maso</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+		integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- <script src='main.js'></script> -->
+	<!-- <script src='main.js'></script> -->
 </head>
-<body>
-   <nav>
-        <ul>
-            <li><a href="#">Experience</a></li>
-            <li><a href="#">Learn</a></li>
-            <li><a href="#">Hobbies</a></li>
-            <li><a href="#">Contact Me</a></li>
-        </ul>
-    </nav>
-<main>
-    <section>
-        <h1>Hey, I'm Nicola, nice to meet you!</h1>
-        <p>
-            Scroll through to learn more about me and what I :love: :smile: :arrowdown:
-        </p>
-    </section>
-    <section>
-        <h1>Experience</h1>
-        <article id="backend-gw">
-            <span>2018-2022</span> <!-- TODO better tag? -->
-            <p>Backend framework based on 
-                <ul>
-                    <li><a href="https://spring.io/web-applications">:spring:</a> (DI and Controllers) and</li>
-                    <li><a href="https://www.jooq.org">:jooq:</a> (DAO).</li>
-                    <li>UI components (grids, forms, cards, wizards) orchestrated by the backend.</li>
-                    <li>Returned data automatically paginated, sorted and filtered based on user input in the UI.</li>
-                    <li>Used by ~50 devs.</li>
-                    <li>Built with <a href="https://gradle.org/">:gradle:</a></li>
-                </ul>
-            </p>
-            :blurred_screenshot:
-        </article>
-        <article>
-            <span>2018-2022</span> <!-- TODO better tag? -->
-            Jenkins management for <a href="#backend-gw">server built above</a>: CI with scripted pipelines on dockerized agents :fun:
-        </article>
-        <article>
-            <span>2017-2020</span> <!-- TODO better tag? -->
-            Eclipse IDE plugins to scaffold projects and other code generation :skull:
-        </article>
-        <article>
-            <span>2019</span> <!-- TODO better tag? -->
-            Web UI built on Angular 7 showing the company's customers data for the Tech Support team.
-        </article>
-    </section>
-    <section>
-        <h1>Learning... <i>as of 2022-10-20</i></h1>
-        <ul>
-            <li>Flutter</li>
-            <li>AWS Certified Solutions Architect Associate</li>
-        </ul>
-    </section>
-    <section>
-        <h1>Things to study in the future...</h1>
-        <ul>
-            <li>AWS Certified Developer Associate</li>
-            <li>Terraform</li>
-            <li>Ansible</li>
-            <li>Rust</li>
-            <li>Japanese</li>
-            <li><i>who knows?</i></li>
-        </ul>
-    </section>
-</main>
 
-<footer>
-    <span>Made with love by Nicola Dal Maso</span>
-    <span>Last update: 2022-10-20</span>
-    <div>
-        <h3>Contacts</h3>
-        <ul>
-           <li><a href="https://github.com/niktekusho">GitHub</a></li>
-           <li><a href="https://www.linkedin.com/in/nicoladalmaso/">LinkedIn</a></li>
-           <li><a href="https://github.com/niktekusho">Contact me</a></li> <!-- TODO: link to a specific page or using js to display a modal dialog  -->
-        </ul>
-    </div>
-</footer>
+<body>
+	<nav>
+		<ul>
+			<li><a href="#experience">Experience</a></li>
+			<li><a href="#learn">Learn</a></li>
+			<!-- <li><a href="#">Hobbies</a></li> -->
+			<li><a href="#">Contact Me</a></li>
+		</ul>
+	</nav>
+
+	<main>
+		<article>
+			<h1>Hey, I'm Nicola, nice to meet you!</h1>
+			<p>
+				Scroll through <i class="fa-solid fa-angles-down"></i> to learn more about me and what I <i
+					class="fa-solid fa-heart"></i>
+			</p>
+		</article>
+		<article id="experience">
+			<h1>Experience</h1>
+			<section id="backend-gw">
+				<h2><time datetime="2018">2018</time>-<time datetime="2022">2022</time></h2>
+				<p>Backend framework based on
+				<ul>
+					<li>
+						<a href="https://spring.io/web-applications">
+							<img src="assets/logos/spring-logo.svg" alt="Spring Framework Logo" />
+							<!-- Spring -->
+						</a>
+						(DI and Controllers) and
+					</li>
+					<li>
+						<a href="https://www.jooq.org">
+							<img src="assets/logos/jooq-logo-black.png" alt="Jooq Logo" />Jooq
+						</a>
+						(DAO & DB communications).
+					</li>
+					<li>UI components (grids, forms, dialogs, wizards) orchestrated by the backend.</li>
+					<li>Returned data automatically paginated, sorted and filtered based on user input in the UI.</li>
+					<li>Used by ~50 devs.</li>
+					<li>Built with
+						<a href="https://gradle.org/">
+							<img src="assets/logos/gradle-dark-green-primary.svg" alt="Gradle Logo" />
+							<!-- Gradle -->
+						</a>
+					</li>
+				</ul>
+				</p>
+				<!-- TODO carousel with the 3 blurred screenshots -->
+			</section>
+			<section>
+				<h2><time datetime="2018">2018</time>-<time datetime="2022">2022</time></h2>
+				<p>
+					Jenkins management for <a href="#backend-gw">server built above</a>: CI with scripted pipelines on
+					dockerized agents <i class="fa-solid fa-code-pull-request"></i>
+				</p>
+			</section>
+			<section>
+				<h2><time datetime="2016">2016</time>-<time datetime="2022">2022</time></h2>
+				<p>
+					Docker images and Docker Compose (legacy)/Stack <i class="fa-solid fa-wand-sparkles"></i>
+					<!-- TODO carousel with dockerfile and stack screenshots -->
+					<img src="assets/sample-dockerfile.png"
+						alt="Screenshot of a Dockerfile sample. The sample uses multiple build steps to take advantage of Docker's build cache." />
+					<img src="assets/sample-qa-stack.png"
+						alt="Screenshot of a Docker Stack sample. The sample defines 3 services used in the QA environments of the product." />
+				</p>
+			</section>
+			<section>
+				<h2><time datetime="2017">2017</time>-<time datetime="2020">2020</time></h2>
+				Eclipse IDE plugins to scaffold projects and other code generation <i class="fa-solid fa-skull"></i>
+			</section>
+			<section>
+				<h2><time datetime="2019">2019</time></h2>
+				Web UI built on Angular 7 showing the company's customers data for the Tech Support team.
+			</section>
+		</article>
+		<article id="learn">
+			<section>
+				<h1>Learning...</h1>
+				<small>as of <time datetime="2022-10-21">2022-10-21</time></small>
+				<ul>
+					<li>Flutter</li>
+					<li>AWS Certified Solutions Architect Associate</li>
+				</ul>
+			</section>
+			<section>
+				<h1>Things to study in the future...</h1>
+				<small>Order might not be final <i class="fa-solid fa-shuffle"></i></small>
+				<ul>
+					<li>AWS Certified Developer Associate</li>
+					<li>Terraform</li>
+					<li>Ansible</li>
+					<li>Rust</li>
+					<li>Japanese</li>
+					<li><i>who knows?</i></li>
+				</ul>
+			</section>
+			<section>
+				<h1>Things I once knew, but could deserve a refresher...</h1>
+				<ul>
+					<li>Network stacks and protocols</li>
+					<li>Tree algorithms (Red Black and more advanced)</li>
+					<!-- <li>Play the piano again...</li> -->
+				</ul>
+			</section>
+
+	</main>
+
+	<footer>
+		<span>Made with love by Nicola Dal Maso</span>
+		<span>Last update: </span><time datetime="2022-10-21">2022-10-21</time>
+		<div>
+			<h3>Contacts</h3>
+			<ul>
+				<li><a href="https://github.com/niktekusho">GitHub</a></li>
+				<li><a href="https://www.linkedin.com/in/nicoladalmaso/">LinkedIn</a></li>
+				<li><a href="https://github.com/niktekusho">Contact me</a></li>
+				<!-- TODO: link to a specific page or using js to display a modal dialog  -->
+			</ul>
+		</div>
+	</footer>
 
 </body>
+
 </html>
