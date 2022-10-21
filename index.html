@@ -8,15 +8,28 @@
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 	<!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
 
+	<!-- Font Awesome from CDN -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
 		integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- Google Fonts from their CDN -->
+	<!-- Fonts using: Lato -->
+	<!-- display=fallback renders a fallback font at first and it's swapped when the font is downloaded. -->
+	<!-- If the font is taking too long to download the fallback font will be used for the lifetime of the page. -->
+	<!-- subset=latin optimizes the requests to Google Fonts CDN by requesting the minimal subset of the font. -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=fallback&subset=latin">
+
+
+	<!-- My CSS -->
+	<link rel="stylesheet" href="style.css">
 
 	<!-- <script src='main.js'></script> -->
 </head>
 
 <body>
-	<nav>
+	<nav class="navbar">
+		<img class="profile-pic small" src="assets/profile.jpeg" alt="My profile image." />
 		<ul>
 			<li><a href="#experience">Experience</a></li>
 			<li><a href="#learn">Learn</a></li>
@@ -25,14 +38,14 @@
 		</ul>
 	</nav>
 
-	<main>
+	<main class="content">
 		<article>
 			<h1>Hey, I'm Nicola, nice to meet you!</h1>
 			<p>
 				Scroll through <i class="fa-solid fa-angles-down"></i> to learn more about me and what I <i
 					class="fa-solid fa-heart"></i>
 			</p>
-			<img src="assets/profile.jpeg" alt="My profile image." />
+			<img class="profile-pic" src="assets/profile.jpeg" alt="My profile image." />
 		</article>
 		<article id="experience">
 			<h1>Experience</h1>
@@ -42,14 +55,14 @@
 				<ul>
 					<li>
 						<a href="https://spring.io/web-applications">
-							<img src="assets/logos/spring-logo.svg" alt="Spring Framework Logo" />
+							<img class="logo" src="assets/logos/spring-logo.svg" alt="Spring Framework Logo" />
 							<!-- Spring -->
 						</a>
 						(DI and Controllers) and
 					</li>
 					<li>
 						<a href="https://www.jooq.org">
-							<img src="assets/logos/jooq-logo-black.png" alt="Jooq Logo" />Jooq
+							<img class="logo" src="assets/logos/jooq-logo-black.png" alt="Jooq Logo" />Jooq
 						</a>
 						(DAO & DB communications).
 					</li>
@@ -58,7 +71,7 @@
 					<li>Used by ~50 devs.</li>
 					<li>Built with
 						<a href="https://gradle.org/">
-							<img src="assets/logos/gradle-dark-green-primary.svg" alt="Gradle Logo" />
+							<img class="logo" src="assets/logos/gradle-dark-green-primary.svg" alt="Gradle Logo" />
 							<!-- Gradle -->
 						</a>
 					</li>
