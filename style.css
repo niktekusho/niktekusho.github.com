@@ -24,6 +24,11 @@ li {
 	list-style: none;
 }
 
+html {
+	/* Enables smooth scrolling  */
+	scroll-behavior: smooth;
+}
+
 /* Specific page style */
 
 .container {
