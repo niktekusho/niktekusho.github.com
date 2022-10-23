@@ -6,7 +6,8 @@
 	--light-background: #FFF7E9;
 	--light-primary: #1746A2;
 	--light-primary-70: #e8edf6;
-
+	--light-main-text: rgba(40, 40, 40);
+	--light-subtitle-text: rgba(69, 69, 69);
 }
 
 /* Global styles or resets */
@@ -14,6 +15,7 @@
 * {
 	box-sizing: border-box;
 	font-family: Lato, Arial, Helvetica, sans-serif;
+	color: var(--light-main-text);
 	margin: 0;
 	padding: 0;
 }
@@ -37,14 +39,11 @@ li {
 	column-gap: 24px;
 	align-items: center;
 	justify-items: center;
-
 	grid-template-columns: [sidebar] 16em [content] auto;
 
 }
 
-body > * {
-	border: 1px solid red;
-}
+/* Sidebar section */
 
 .sidebar {
 	background-color: white;
@@ -61,9 +60,44 @@ body > * {
 	/* Layout inside the sidebar */
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+}
 
-	/* align-items: center; */
-	justify-content: space-around;
+.sidebar a {
+	/* Resets every link style in the sidebar */
+	text-decoration: none;
+}
+
+.sidebar a:active, .sidebar:visited {
+	/* Resets every link style in the sidebar */
+	text-decoration: none;
+}
+
+.header {
+	/* Makes the header profile pic and text a column and align center horizontally  */
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 1rem auto;
+
+	/* Makes the text more noticeable */
+	font-size: 2rem;
+	font-weight: 900;
+
+	/* Sets link text color */
+	color: var(--light-main-text);
+
+}
+
+.profile-pic {
+	/* Makes the profile pic circular */
+	border-radius: 100%;
+
+	/* Defines a fixed size for the pic */
+	width: 6em;
+
+	/* Adds a bit of spacing underneath the pic */
+	padding-bottom: 1rem;
 }
 
 .navbar > ul {
@@ -72,33 +106,54 @@ body > * {
 	align-items: center;
 }
 
-.navbar-item > a {
-	text-decoration: none;
+.navbar-item {
+	margin: 1rem 0;
 }
 
-.profile-pic {
-	display: block;
+.navbar-item > a {
+	font-size: 1.5rem;
+	color: var(--light-subtitle-text);
+
+	padding: 0.5rem;
 }
+
+.footer {
+	/* Layout of the footer */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	padding: 1rem;
+	font-size: 1.3rem;
+}
+
+/* Sets padding for every child of the footer */
+.footer > * {
+	padding: 8px;
+}
+
+.footer-sub {
+	font-size: 1rem;
+	color: var(--light-subtitle-text);
+}
+
+.social-item {
+	padding: 0.5rem 0;
+	font-size: 1.1rem;
+}
+
+/* Main content section */
 
 .content {
 	grid-area: content;
 	/* text-align: center; */
 }
 
-.footer {
-}
-
-.profile-pic {
-	border-radius: 100%;
-	width: 25%;
-}
-
-.profile-pic.small {
-	width: 2em;
-}
 
 .brand {
 	height: 2em;
 }
 
 
+/* TODO fix left bar of the navigation (background shows through) */
