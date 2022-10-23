@@ -27,16 +27,39 @@
 	<!-- <script src='main.js'></script> -->
 </head>
 
-<body>
-	<nav class="navbar">
-		<img class="profile-pic small" src="assets/profile.jpeg" alt="My profile image." />
-		<ul>
-			<li><a href="#experience">Experience</a></li>
-			<li><a href="#learn">Learn</a></li>
-			<!-- <li><a href="#">Hobbies</a></li> -->
-			<li><a href="#">Contact Me</a></li>
-		</ul>
-	</nav>
+<body class="container">
+
+	<aside class="sidebar">
+		<header>
+			<a href="#">
+					<div class="logo">
+						<img class="profile-pic" src="assets/profile.jpeg" alt="My profile image." />
+						Nicola Dal Maso
+					</div>
+				</a>
+		</header>
+
+		<nav class="navbar">
+			<ul>
+				<li class="navbar-item"><a href="#experience">Experience</a></li>
+				<li class="navbar-item"><a href="#learn">Learn</a></li>
+				<!-- <li><a href="#">Hobbies</a></li> -->
+			</ul>
+		</nav>
+
+		<footer class="footer">
+			<span>Made with love by Nicola Dal Maso</span>
+			<span>Last update: </span><time datetime="2022-10-21">2022-10-21</time>
+			<div>
+				<ul>
+					<li><a href="https://github.com/niktekusho">GitHub</a></li>
+					<li><a href="https://www.linkedin.com/in/nicoladalmaso/">LinkedIn</a></li>
+					<li><a href="https://github.com/niktekusho">Contact me</a></li>
+					<!-- TODO: link to a specific page or using js to display a modal dialog  -->
+				</ul>
+			</div>
+		</footer>
+	</aside>
 
 	<main class="content">
 		<article>
@@ -45,7 +68,6 @@
 				Scroll through <i class="fa-solid fa-angles-down"></i> to learn more about me and what I <i
 					class="fa-solid fa-heart"></i>
 			</p>
-			<img class="profile-pic" src="assets/profile.jpeg" alt="My profile image." />
 		</article>
 		<article id="experience">
 			<h1>Experience</h1>
@@ -55,14 +77,14 @@
 				<ul>
 					<li>
 						<a href="https://spring.io/web-applications">
-							<img class="logo" src="assets/logos/spring-logo.svg" alt="Spring Framework Logo" />
+							<img class="brand" src="assets/logos/spring-logo.svg" alt="Spring Framework Logo" />
 							<!-- Spring -->
 						</a>
 						(DI and Controllers) and
 					</li>
 					<li>
 						<a href="https://www.jooq.org">
-							<img class="logo" src="assets/logos/jooq-logo-black.png" alt="Jooq Logo" />Jooq
+							<img class="brand" src="assets/logos/jooq-logo-black.png" alt="Jooq Logo" />Jooq
 						</a>
 						(DAO & DB communications).
 					</li>
@@ -71,7 +93,7 @@
 					<li>Used by ~50 devs.</li>
 					<li>Built with
 						<a href="https://gradle.org/">
-							<img class="logo" src="assets/logos/gradle-dark-green-primary.svg" alt="Gradle Logo" />
+							<img class="brand gradle" src="assets/logos/gradle-dark-green-primary.svg" alt="Gradle Logo" />
 							<!-- Gradle -->
 						</a>
 					</li>
@@ -89,7 +111,7 @@
 			<section>
 				<h2><time datetime="2016">2016</time>-<time datetime="2022">2022</time></h2>
 				<p>
-					Docker images and Docker Compose (legacy)/Stack <i class="fa-solid fa-wand-sparkles"></i>
+					Docker images and Docker Compose (legacy) and Swarm with Stacks <i class="fa-solid fa-wand-sparkles"></i>
 					<!-- TODO carousel with dockerfile and stack screenshots -->
 					<img src="assets/sample-dockerfile.png"
 						alt="Screenshot of a Dockerfile sample. The sample uses multiple build steps to take advantage of Docker's build cache." />
@@ -138,19 +160,6 @@
 
 	</main>
 
-	<footer>
-		<span>Made with love by Nicola Dal Maso</span>
-		<span>Last update: </span><time datetime="2022-10-21">2022-10-21</time>
-		<div>
-			<h3>Contacts</h3>
-			<ul>
-				<li><a href="https://github.com/niktekusho">GitHub</a></li>
-				<li><a href="https://www.linkedin.com/in/nicoladalmaso/">LinkedIn</a></li>
-				<li><a href="https://github.com/niktekusho">Contact me</a></li>
-				<!-- TODO: link to a specific page or using js to display a modal dialog  -->
-			</ul>
-		</div>
-	</footer>
 
 </body>
 
