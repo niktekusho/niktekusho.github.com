@@ -49,8 +49,10 @@
 			<span class="footer-main">Made with <i class="fa-solid fa-heart"></i> by Nicola Dal Maso</span>
 			<div class="footer-socials">
 				<ul>
-					<li class="social-item"><a href="https://github.com/niktekusho"><i class="fa-brands fa-github"></i> GitHub</a></li>
-					<li class="social-item"><a href="https://www.linkedin.com/in/nicoladalmaso/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+					<li class="social-item"><a href="https://github.com/niktekusho"><i class="fa-brands fa-github"></i> GitHub</a>
+					</li>
+					<li class="social-item"><a href="https://www.linkedin.com/in/nicoladalmaso/"><i
+								class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
 				</ul>
 			</div>
 			<span class="footer-sub">Last update: <time datetime="2022-10-21">2022-10-21</time></span>
@@ -58,105 +60,107 @@
 	</aside>
 
 	<main class="content">
-		<article>
+		<article class="slide hero">
 			<h1>Hey, I'm Nicola, nice to meet you!</h1>
 			<p>
 				Scroll through <i class="fa-solid fa-angles-down"></i> to learn more about me and what I <i
 					class="fa-solid fa-heart"></i>
 			</p>
 		</article>
-		<article id="experience">
+		<article class="slide" id="experience">
 			<h1>Experience</h1>
-			<section id="backend-gw">
-				<h2><time datetime="2018">2018</time>-<time datetime="2022">2022</time></h2>
-				<p>Backend framework based on
-				<ul>
-					<li>
-						<a href="https://spring.io/web-applications">
-							<img class="brand" src="assets/logos/spring-logo.svg" alt="Spring Framework Logo" />
-							<!-- Spring -->
-						</a>
-						(DI and Controllers) and
-					</li>
-					<li>
-						<a href="https://www.jooq.org">
-							<img class="brand" src="assets/logos/jooq-logo-black.png" alt="Jooq Logo" />Jooq
-						</a>
-						(DAO & DB communications).
-					</li>
-					<li>UI components (grids, forms, dialogs, wizards) orchestrated by the backend.</li>
-					<li>Returned data automatically paginated, sorted and filtered based on user input in the UI.</li>
-					<li>Used by ~50 devs.</li>
-					<li>Built with
-						<a href="https://gradle.org/">
-							<img class="brand gradle" src="assets/logos/gradle-dark-green-primary.svg" alt="Gradle Logo" />
-							<!-- Gradle -->
-						</a>
-					</li>
-				</ul>
-				</p>
-				<!-- TODO carousel with the 3 blurred screenshots -->
-			</section>
-			<section>
-				<h2><time datetime="2018">2018</time>-<time datetime="2022">2022</time></h2>
-				<p>
-					Jenkins management for <a href="#backend-gw">server built above</a>: CI with scripted pipelines on
-					dockerized agents <i class="fa-solid fa-code-pull-request"></i>
-				</p>
-			</section>
-			<section>
-				<h2><time datetime="2016">2016</time>-<time datetime="2022">2022</time></h2>
-				<p>
-					Docker images and Docker Compose (legacy) and Swarm with Stacks <i class="fa-solid fa-wand-sparkles"></i>
-					<!-- TODO carousel with dockerfile and stack screenshots -->
-					<img src="assets/sample-dockerfile.png"
-						alt="Screenshot of a Dockerfile sample. The sample uses multiple build steps to take advantage of Docker's build cache." />
-					<img src="assets/sample-qa-stack.png"
-						alt="Screenshot of a Docker Stack sample. The sample defines 3 services used in the QA environments of the product." />
-				</p>
-			</section>
-			<section>
-				<h2><time datetime="2017">2017</time>-<time datetime="2020">2020</time></h2>
-				Eclipse IDE plugins to scaffold projects and other code generation <i class="fa-solid fa-skull"></i>
-			</section>
-			<section>
-				<h2><time datetime="2019">2019</time></h2>
-				Web UI built on Angular 7 showing the company's customers data for the Tech Support team.
-			</section>
+			<div class="side-scrolling">
+				<section id="backend-gw">
+					<h2><time datetime="2018">2018</time>-<time datetime="2022">2022</time></h2>
+					<p>Backend framework based on
+					<ul>
+						<li>
+							<a href="https://spring.io/web-applications">
+								<img class="brand" src="assets/logos/spring-logo.svg" alt="Spring Framework Logo" />
+								<!-- Spring -->
+							</a>
+							(DI and Controllers) and
+						</li>
+						<li>
+							<a href="https://www.jooq.org">
+								<img class="brand" src="assets/logos/jooq-logo-black.png" alt="Jooq Logo" />Jooq
+							</a>
+							(DAO & DB communications).
+						</li>
+						<li>UI components (grids, forms, dialogs, wizards) orchestrated by the backend.</li>
+						<li>Returned data automatically paginated, sorted and filtered based on user input in the UI.</li>
+						<li>Used by ~50 devs.</li>
+						<li>Built with
+							<a href="https://gradle.org/">
+								<img class="brand gradle" src="assets/logos/gradle-dark-green-primary.svg" alt="Gradle Logo" />
+								<!-- Gradle -->
+							</a>
+						</li>
+					</ul>
+					</p>
+					<!-- TODO carousel with the 3 blurred screenshots -->
+				</section>
+				<section>
+					<h2><time datetime="2018">2018</time>-<time datetime="2022">2022</time></h2>
+					<p>
+						Jenkins management for <a href="#backend-gw">server built above</a>: CI with scripted pipelines on
+						dockerized agents <i class="fa-solid fa-code-pull-request"></i>
+					</p>
+				</section>
+				<section>
+					<h2><time datetime="2016">2016</time>-<time datetime="2022">2022</time></h2>
+					<p>
+						Docker images and Docker Compose (legacy) and Swarm with Stacks <i class="fa-solid fa-wand-sparkles"></i>
+						<!-- TODO carousel with dockerfile and stack screenshots -->
+						<!-- <img src="assets/sample-dockerfile.png"
+							alt="Screenshot of a Dockerfile sample. The sample uses multiple build steps to take advantage of Docker's build cache." />
+						<img src="assets/sample-qa-stack.png"
+							alt="Screenshot of a Docker Stack sample. The sample defines 3 services used in the QA environments of the product." /> -->
+					</p>
+				</section>
+				<section>
+					<h2><time datetime="2017">2017</time>-<time datetime="2020">2020</time></h2>
+					Eclipse IDE plugins to scaffold projects and other code generation <i class="fa-solid fa-skull"></i>
+				</section>
+				<section>
+					<h2><time datetime="2019">2019</time></h2>
+					Web UI built on Angular 7 showing the company's customers data for the Tech Support team.
+				</section>
+			</div>
 		</article>
-		<article id="learn">
-			<section>
-				<h1>Learning...</h1>
-				<small>as of <time datetime="2022-10-21">2022-10-21</time></small>
-				<ul>
-					<li>Flutter</li>
-					<li>AWS Certified Solutions Architect Associate</li>
-				</ul>
-			</section>
-			<section>
-				<h1>Things to study in the future...</h1>
-				<small>Order might not be final <i class="fa-solid fa-shuffle"></i></small>
-				<ul>
-					<li>AWS Certified Developer Associate</li>
-					<li>Terraform</li>
-					<li>Ansible</li>
-					<li>Rust</li>
-					<li>Japanese</li>
-					<li><i>who knows?</i></li>
-				</ul>
-			</section>
-			<section>
-				<h1>Things I once knew, but could deserve a refresher...</h1>
-				<ul>
-					<li>Network stacks and protocols</li>
-					<li>Tree algorithms (Red Black and more advanced)</li>
-					<!-- <li>Play the piano again...</li> -->
-				</ul>
-			</section>
-
+		<article class="slide" id="learn">
+			<div class="side-scrolling">
+				<section>
+					<h1>Learning...</h1>
+					<small>as of <time datetime="2022-10-21">2022-10-21</time></small>
+					<ul>
+						<li>Flutter</li>
+						<li>AWS Certified Solutions Architect Associate</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Things to study in the future...</h1>
+					<small>Order might not be final <i class="fa-solid fa-shuffle"></i></small>
+					<ul>
+						<li>AWS Certified Developer Associate</li>
+						<li>Terraform</li>
+						<li>Ansible</li>
+						<li>Rust</li>
+						<li>Japanese</li>
+						<li><i>who knows?</i></li>
+					</ul>
+				</section>
+				<section>
+					<h1>Things I once knew, but could deserve a refresher...</h1>
+					<ul>
+						<li>Network stacks and protocols</li>
+						<li>Tree algorithms (Red Black and more advanced)</li>
+						<!-- <li>Play the piano again...</li> -->
+					</ul>
+				</section>
+			</div>
+		</article>
 	</main>
-
-
 </body>
 
 </html>

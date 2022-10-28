@@ -8,6 +8,9 @@
 	--light-primary-70: #e8edf6;
 	--light-main-text: rgba(40, 40, 40);
 	--light-subtitle-text: rgba(69, 69, 69);
+
+	--sidebar-width: 16em;
+	--main-layout-column-gap: 24px;
 }
 
 /* Global styles or resets */
@@ -27,24 +30,30 @@ li {
 html {
 	/* Enables smooth scrolling  */
 	scroll-behavior: smooth;
+
+	scroll-snap-type: mandatory;
+	scroll-snap-align: center;
 }
 
 /* Specific page style */
 
 .container {
 
+	/* Full screen container */
+	width: 100vw;
+	height: 100vh;
+
 	/* Increase global font size */
 	font-size: 1.5rem;
 
-	margin: 0 auto;
 	background-color: var(--light-primary-70);
 
 	/* Grid layout */
 	display: grid;
-	column-gap: 24px;
+	column-gap: var(--main-layout-column-gap);
 	align-items: center;
 	justify-items: center;
-	grid-template-columns: [sidebar] 16em [content] auto;
+	grid-template-columns: [sidebar] var(--sidebar-width) [content] auto;
 
 }
 
@@ -60,8 +69,10 @@ html {
 	position: sticky;
 	top: 0;
 	align-self: flex-start;
-	height: 100vh;
-	width: 100%; /* take all space given by the grid layout */
+
+	/* take all space given by the grid layout */
+	height: 100%;
+	width: 100%;
 
 	/* Layout inside the sidebar */
 	display: flex;
@@ -159,4 +170,51 @@ html {
 
 .brand {
 	height: 2em;
+}
+
+/* Main content */
+
+.content {
+	width: 100%;
+	height: 100%;
+
+	/* TODO might make it hidden in next revs */
+	overflow-x: auto;
+}
+
+.slide {
+	/* Every "slide" should take the whole vertical viewport. */
+	height: 100vh;
+	padding: 2rem;
+
+	/* Center horizontal alignment and baseline/"top" vertical alignment */
+	place-items: center;
+	align-items: baseline;
+
+	display: grid;
+}
+
+/* TODO: add what I have in other PC */
+.hero {
+	grid-auto-flow: row;
+	align-items: center;
+}
+
+.side-scrolling {
+	/* Side scrolling */
+	display: grid;
+	/* Instead of generate rows for each child, generate columns */
+	grid-auto-flow: column;
+	/* Each generated column is as WIDE as the parent element (this) */
+	grid-auto-columns: 100%;
+
+	border: 1px solid black; /* TODO debug only */
+}
+
+
+/* Legal stuff */
+
+/* Required by https://gradle.com/brand/ */
+.brand.gradle {
+	min-width: 100px;
 }
