@@ -61,6 +61,7 @@ html {
 	top: 0;
 	align-self: flex-start;
 	height: 100vh;
+	width: 100%; /* take all space given by the grid layout */
 
 	/* Layout inside the sidebar */
 	display: flex;
