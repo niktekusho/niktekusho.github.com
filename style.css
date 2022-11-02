@@ -23,7 +23,7 @@
 	padding: 0;
 }
 
-li {
+ul {
 	list-style: none;
 }
 
@@ -85,7 +85,8 @@ html {
 	text-decoration: none;
 }
 
-.sidebar a:active, .sidebar:visited {
+.sidebar a:active,
+.sidebar:visited {
 	/* Resets every link style in the sidebar */
 	text-decoration: none;
 }
@@ -117,7 +118,7 @@ html {
 	padding-bottom: 1rem;
 }
 
-.navbar > ul {
+.navbar>ul {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -127,7 +128,7 @@ html {
 	margin: 1rem 0;
 }
 
-.navbar-item > a {
+.navbar-item>a {
 	font-size: 1.5rem;
 	color: var(--light-subtitle-text);
 
@@ -146,7 +147,7 @@ html {
 }
 
 /* Sets padding for every child of the footer */
-.footer > * {
+.footer>* {
 	padding: 8px;
 }
 
@@ -165,16 +166,7 @@ html {
 .content {
 	grid-area: content;
 	/* text-align: center; */
-}
 
-
-.brand {
-	height: 2em;
-}
-
-/* Main content */
-
-.content {
 	width: 100%;
 	height: 100%;
 
@@ -182,7 +174,8 @@ html {
 	overflow-x: auto;
 }
 
-.slide {
+
+.slides-container {
 	/* Every "slide" should take the whole vertical viewport. */
 	height: 100vh;
 	padding: 2rem;
@@ -192,6 +185,8 @@ html {
 	align-items: baseline;
 
 	display: grid;
+	/* Each row must use only the necessary height */
+	grid-template-rows: min-content;
 }
 
 /* TODO: add what I have in other PC */
@@ -200,21 +195,98 @@ html {
 	align-items: center;
 }
 
+/* TODO: would be really cool to be able to use vertical scrolling to navigate the side-scrolling sections */
 .side-scrolling {
-	/* Side scrolling */
 	display: grid;
 	/* Instead of generate rows for each child, generate columns */
 	grid-auto-flow: column;
 	/* Each generated column is as WIDE as the parent element (this) */
 	grid-auto-columns: 100%;
 
-	border: 1px solid black; /* TODO debug only */
+	height: 100%;
+	/* place-content: center center; */
+
+	overflow-x: scroll;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+
+	/* padding: 8rem; */
+	/* place-items: ce; */
+
+}
+
+.side-scrolling--content {
+	display: grid;
+	align-items: center;
+}
+
+/* TODO this re-enables list-decorations. Change with a specific class of lists. */
+
+.side-scrolling--content>ul {
+	list-style-type: square;
+	margin-left: 3rem;
+}
+
+.side-scrolling--content>ul>li {
+	/* line-height: 100px; */
+	line-height: 3rem;
 }
 
 
+
+.centered-list-item-content {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+
+/* .side-scrolling--content > h2 {
+	margin-bottom: 2rem;
+} */
+
+.side-scrolling--content {
+	padding: 2rem;
+}
+
+
+.side-scrolling--nav-prev,
+.side-scrolling--nav-next {
+	content: "";
+}
+
+/* Brands */
+
+.brand {
+	height: 2rem;
+	/* Make sure the images do not get stretched */
+	object-fit: cover;
+}
+
+/* Adjust positioning for some brands to align them to text baseline */
+.brand.spring {
+	position: relative;
+	top: .5rem;
+}
+
+.brand.jooq {
+	position: relative;
+	top: .5rem;
+	margin-right: .5rem;
+}
+
 /* Legal stuff */
 
-/* Required by https://gradle.com/brand/ */
 .brand.gradle {
+	/* Required by https://gradle.com/brand/ */
 	min-width: 100px;
+	/* 6 characters plus 2 of the elephant logo */
+	width: 8rem;
+
+	position: relative;
+	top: .5rem;
+
+	/* Move the logo a bit closer to the text */
+	left: -1rem;
+
 }

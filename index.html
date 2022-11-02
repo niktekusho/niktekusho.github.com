@@ -60,54 +60,61 @@
 	</aside>
 
 	<main class="content">
-		<article class="slide hero">
+		<article class="slides-container hero">
 			<h1>Hey, I'm Nicola, nice to meet you!</h1>
 			<p>
 				Scroll through <i class="fa-solid fa-angles-down"></i> to learn more about me and what I <i
 					class="fa-solid fa-heart"></i>
 			</p>
 		</article>
-		<article class="slide" id="experience">
+		<article class="slides-container" id="experience">
 			<h1>Experience</h1>
 			<div class="side-scrolling">
-				<section id="backend-gw">
+				<section class="side-scrolling--content" id="backend-gw">
 					<h2><time datetime="2018">2018</time>-<time datetime="2022">2022</time></h2>
 					<p>Backend framework based on
 					<ul>
 						<li>
-							<a href="https://spring.io/web-applications">
-								<img class="brand" src="assets/logos/spring-logo.svg" alt="Spring Framework Logo" />
-								<!-- Spring -->
-							</a>
-							(DI and Controllers) and
+							<div class="centered-list-item-content">
+								<a href="https://spring.io/web-applications">
+									<img class="brand spring" src="assets/logos/spring-logo.svg" alt="Spring" /><!-- Spring --></a>
+								(for DI and Controllers) and
+							</div>
 						</li>
 						<li>
-							<a href="https://www.jooq.org">
-								<img class="brand" src="assets/logos/jooq-logo-black.png" alt="Jooq Logo" />Jooq
-							</a>
-							(DAO & DB communications).
+							<div class="centered-list-item-content">
+								<a href="https://www.jooq.org">
+									<img class="brand jooq" src="assets/logos/jooq-logo-black.png" alt="Jooq Logo" />Jooq
+								</a>
+								(DAO & DB communications).
+							</div>
 						</li>
 						<li>UI components (grids, forms, dialogs, wizards) orchestrated by the backend.</li>
 						<li>Returned data automatically paginated, sorted and filtered based on user input in the UI.</li>
 						<li>Used by ~50 devs.</li>
-						<li>Built with
-							<a href="https://gradle.org/">
-								<img class="brand gradle" src="assets/logos/gradle-dark-green-primary.svg" alt="Gradle Logo" />
-								<!-- Gradle -->
-							</a>
+						<li>
+							<div class="centered-list-item-content">
+								Built with
+								<a href="https://gradle.org/">
+									<img class="brand gradle" src="assets/logos/gradle-dark-green-primary.svg" alt="Gradle Logo" /><!-- Gradle --></a>
+							</div>
 						</li>
 					</ul>
 					</p>
+					<a class="side-scrolling--nav-prev" href="#eclipse" title="Eclipse experience">Eclipse</a>
+					<a class="side-scrolling--nav-next" href="#jenkins" title="Jenkins experience"></a>
 					<!-- TODO carousel with the 3 blurred screenshots -->
 				</section>
-				<section>
+				<section class="side-scrolling--content" id="jenkins">
 					<h2><time datetime="2018">2018</time>-<time datetime="2022">2022</time></h2>
 					<p>
 						Jenkins management for <a href="#backend-gw">server built above</a>: CI with scripted pipelines on
 						dockerized agents <i class="fa-solid fa-code-pull-request"></i>
 					</p>
+					<a class="side-scrolling--nav-prev" href="#backend-gw" title="Backend experience"></a>
+					<a class="side-scrolling--nav-next" href="#docker" title="Docker experience"></a>
 				</section>
-				<section>
+				<section class="side-scrolling--content" id="docker">
 					<h2><time datetime="2016">2016</time>-<time datetime="2022">2022</time></h2>
 					<p>
 						Docker images and Docker Compose (legacy) and Swarm with Stacks <i class="fa-solid fa-wand-sparkles"></i>
@@ -115,20 +122,33 @@
 						<!-- <img src="assets/sample-dockerfile.png"
 							alt="Screenshot of a Dockerfile sample. The sample uses multiple build steps to take advantage of Docker's build cache." />
 						<img src="assets/sample-qa-stack.png"
-							alt="Screenshot of a Docker Stack sample. The sample defines 3 services used in the QA environments of the product." /> -->
+						alt="Screenshot of a Docker Stack sample. The sample defines 3 services used in the QA environments of the product." /> -->
 					</p>
+					<a class="side-scrolling--nav-prev" href="#jenkins" title="Jenkins experience"></a>
+					<a class="side-scrolling--nav-next" href="#frontend" title="Frontend experience"></a>
 				</section>
-				<section>
-					<h2><time datetime="2017">2017</time>-<time datetime="2020">2020</time></h2>
-					Eclipse IDE plugins to scaffold projects and other code generation <i class="fa-solid fa-skull"></i>
-				</section>
-				<section>
+				<section class="side-scrolling--content" id="frontend">
 					<h2><time datetime="2019">2019</time></h2>
 					Web UI built on Angular 7 showing the company's customers data for the Tech Support team.
+					<a class="side-scrolling--nav-prev" href="#docker" title="Docker experience"></a>
+					<a class="side-scrolling--nav-next" href="#eclipse" title="Eclipse experience"></a>
 				</section>
+				<section class="side-scrolling--content" id="eclipse">
+					<h2><time datetime="2017">2017</time>-<time datetime="2020">2020</time></h2>
+					Eclipse IDE plugins to scaffold projects and other code generation <i class="fa-solid fa-skull"></i>
+					<a class="side-scrolling--nav-prev" href="#frontend" title="Frontend experience"></a>
+					<a class="side-scrolling--nav-next" href="#backend-gw" title="Backend experience"></a>
+				</section>
+				<div class="side-scrolling--nav">
+					<a class="side-scrolling--nav-link" href="#backend-gw" title="Backend experience"></a>
+					<a class="side-scrolling--nav-link" href="#jenkins" title="Jenkins experience"></a>
+					<a class="side-scrolling--nav-link" href="#docker" title="Docker experience"></a>
+					<a class="side-scrolling--nav-link" href="#frontend" title="Frontend experience"></a>
+					<a class="side-scrolling--nav-link" href="#eclipse" title="Eclipse experience"></a>
+				</div>
 			</div>
 		</article>
-		<article class="slide" id="learn">
+		<article class="slides-container" id="learn">
 			<div class="side-scrolling">
 				<section>
 					<h1>Learning...</h1>
