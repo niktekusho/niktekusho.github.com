@@ -36,7 +36,7 @@
 		</a>
 
 		<nav class="navbar">
-			<ul>
+			<ul class="navbar--list">
 				<li class="navbar-item"><a href="#experience">Experience</a></li>
 				<li class="navbar-item"><a href="#learn">Learning</a></li>
 				<!-- <li><a href="#">Hobbies</a></li> -->
@@ -61,16 +61,16 @@
 
 	<main class="content">
 		<article class="slides-container hero">
-			<h1>Hey, I'm Nicola, nice to meet you!</h1>
-			<p>
+			<h2 class="hero--title">Hey, I'm Nicola, nice to meet you!</h2>
+			<p class="hero--subtitle">
 				Scroll through <i class="fa-solid fa-angles-down"></i> to learn more about me and what I <i
 					class="fa-solid fa-heart"></i>
 			</p>
 		</article>
 		<article class="slides-container" id="experience">
-			<h1>Experience</h1>
-			<section class="" id="backend-gw">
-				<h2><time datetime="2018">2018</time>-<time datetime="2022">2022</time></h2>
+			<h2 class="slides-container--title">Experience</h2>
+			<section class="slide-content" id="backend-gw">
+				<h3><time datetime="2018">2018</time>-<time datetime="2022">2022</time></h3>
 				<p>Backend framework based on
 				<ul>
 					<li>
@@ -101,21 +101,17 @@
 					</li>
 				</ul>
 				</p>
-				<a class="side-scrolling--nav-prev" href="#eclipse" title="Eclipse experience">Eclipse</a>
-				<a class="side-scrolling--nav-next" href="#jenkins" title="Jenkins experience"></a>
 				<!-- TODO carousel with the 3 blurred screenshots -->
 			</section>
-			<section class="" id="jenkins">
-				<h2><time datetime="2018">2018</time>-<time datetime="2022">2022</time></h2>
+			<section class="slide-content" id="jenkins">
+				<h3><time datetime="2018">2018</time>-<time datetime="2022">2022</time></h3>
 				<p>
 					Jenkins management for <a href="#backend-gw">server built above</a>: CI with scripted pipelines on
 					dockerized agents <i class="fa-solid fa-code-pull-request"></i>
 				</p>
-				<a class="side-scrolling--nav-prev" href="#backend-gw" title="Backend experience"></a>
-				<a class="side-scrolling--nav-next" href="#docker" title="Docker experience"></a>
 			</section>
-			<section class="" id="docker">
-				<h2><time datetime="2016">2016</time>-<time datetime="2022">2022</time></h2>
+			<section class="slide-content" id="docker">
+				<h3><time datetime="2016">2016</time>-<time datetime="2022">2022</time></h3>
 				<p>
 					Docker images and Docker Compose (legacy) and Swarm with Stacks <i class="fa-solid fa-wand-sparkles"></i>
 					<!-- TODO carousel with dockerfile and stack screenshots -->
@@ -124,34 +120,34 @@
 						<img src="assets/sample-qa-stack.png"
 						alt="Screenshot of a Docker Stack sample. The sample defines 3 services used in the QA environments of the product." /> -->
 				</p>
-				<a class="side-scrolling--nav-prev" href="#jenkins" title="Jenkins experience"></a>
-				<a class="side-scrolling--nav-next" href="#frontend" title="Frontend experience"></a>
 			</section>
-			<section class="" id="frontend">
-				<h2><time datetime="2019">2019</time></h2>
+			<section class="slide-content" id="frontend">
+				<h3><time datetime="2019">2019</time></h3>
 				Web UI built on Angular 7 showing the company's customers data for the Tech Support team.
-				<a class="side-scrolling--nav-prev" href="#docker" title="Docker experience"></a>
-				<a class="side-scrolling--nav-next" href="#eclipse" title="Eclipse experience"></a>
 			</section>
-			<section class="" id="eclipse">
-				<h2><time datetime="2017">2017</time>-<time datetime="2020">2020</time></h2>
+			<section class="slide-content" id="eclipse">
+				<h3><time datetime="2017">2017</time>-<time datetime="2020">2020</time></h3>
 				Eclipse IDE plugins to scaffold projects and other code generation <i class="fa-solid fa-skull"></i>
-				<a class="side-scrolling--nav-prev" href="#frontend" title="Frontend experience"></a>
-				<a class="side-scrolling--nav-next" href="#backend-gw" title="Backend experience"></a>
 			</section>
 		</article>
 		<article class="slides-container" id="learn">
-				<section>
-					<h1>Learning...</h1>
-					<small>as of <time datetime="2022-10-21">2022-10-21</time></small>
+			<div class="slides-container--title title-with-subtitle">
+				<h2>Learning...</h2>
+				<small class="subtitle">as of <time datetime="2022-10-21">2022-10-21</time></small>
+			</div>
+			<div class="grid-cards">
+				<section class="slide-content">
+					<h3>Right now studying for:</h3>
 					<ul>
 						<li>Flutter</li>
 						<li>AWS Certified Solutions Architect Associate</li>
 					</ul>
 				</section>
-				<section>
-					<h1>Things to study in the future...</h1>
-					<small>Order might not be final <i class="fa-solid fa-shuffle"></i></small>
+				<section class="slide-content">
+					<div class="title-with-subtitle">
+						<h3>Things to study in the future...</h3>
+						<small class="subtitle">(Not in any particular order <i class="fa-solid fa-shuffle"></i>)</small>
+					</div>
 					<ul>
 						<li>AWS Certified Developer Associate</li>
 						<li>Terraform</li>
@@ -161,14 +157,15 @@
 						<li><i>who knows?</i></li>
 					</ul>
 				</section>
-				<section>
-					<h1>Things I once knew, but could deserve a refresher...</h1>
+				<section class="slide-content">
+					<h3>Refresher needed <i class="fa-solid fa-face-grin-beam-sweat"></i></h3>
 					<ul>
 						<li>Network stacks and protocols</li>
 						<li>Tree algorithms (Red Black and more advanced)</li>
 						<!-- <li>Play the piano again...</li> -->
 					</ul>
 				</section>
+			</div>
 		</article>
 	</main>
 </body>

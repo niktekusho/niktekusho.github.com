@@ -21,6 +21,10 @@
 	color: var(--light-main-text);
 	margin: 0;
 	padding: 0;
+
+	/* debug */
+	/* overflow: auto; */
+	/* border: 1px solid red; */
 }
 
 ul {
@@ -38,10 +42,6 @@ html {
 /* Specific page style */
 
 .container {
-
-	/* Full screen container */
-	width: 100vw;
-	height: 100vh;
 
 	/* Increase global font size */
 	font-size: 1.5rem;
@@ -68,10 +68,12 @@ html {
 	/* Makes the sidebar sticky and full height */
 	position: sticky;
 	top: 0;
+	left: 0;
 	align-self: flex-start;
 
+	/* make the sidebar all screen high */
+	height: 100vh;
 	/* take all space given by the grid layout */
-	height: 100%;
 	width: 100%;
 
 	/* Layout inside the sidebar */
@@ -165,94 +167,65 @@ html {
 
 .content {
 	grid-area: content;
-	/* text-align: center; */
 
-	width: 100%;
-	height: 100%;
+	/* TODO check other values to see if this is good */
+	padding: 4rem;
 
 	/* TODO might make it hidden in next revs */
-	overflow-x: auto;
+	/* overflow-x: auto; */
 }
 
 
 .slides-container {
-	/* Every "slide" should take the whole vertical viewport. */
-	height: 100vh;
 	padding: 2rem;
+	margin: 1rem;
 
-	/* Center horizontal alignment and baseline/"top" vertical alignment */
-	place-items: center;
-	align-items: baseline;
+	/* "Left" horizontal alignment and center vertical alignment */
+	place-items: center flex-start;
 
 	display: grid;
-	/* Each row must use only the necessary height */
-	grid-template-rows: min-content;
+}
+
+
+.slides-container--title {
+
+	/* higher vertical padding used as line-height*/
+	padding: 2rem 1rem;
+
+	/* Overrides the default "left" horizontal alignments */
+	justify-self: center;
+
+	/* trying to make it sticky (needs animation to the right margin of the screen) */
+	/* position: sticky;
+	top: 0;
+	background-color: var(--light-primary-70);
+	display: block;
+	width: 100%;
+	z-index: 9; */
 }
 
 /* TODO: add what I have in other PC */
 .hero {
-	grid-auto-flow: row;
-	align-items: center;
+	place-content: stretch center;
+	grid-template-rows: repeat(2, auto);
+	height: 100vh;
 }
 
-/* TODO: would be really cool to be able to use vertical scrolling to navigate the side-scrolling sections */
-.side-scrolling {
-	display: grid;
-	/* Instead of generate rows for each child, generate columns */
-	grid-auto-flow: column;
-	/* Each generated column is as WIDE as the parent element (this) */
-	grid-auto-columns: 100%;
-
-	height: 100%;
-	/* place-content: center center; */
-
-	overflow-x: scroll;
-	scroll-snap-type: x mandatory;
-	scroll-behavior: smooth;
-
-	/* padding: 8rem; */
-	/* place-items: ce; */
-
+.slide-content {
+	padding: 1rem;
+	margin: 1rem;
+	line-height: 2;
 }
 
-.side-scrolling--content {
-	display: grid;
-	align-items: center;
-}
-
-/* TODO this re-enables list-decorations. Change with a specific class of lists. */
-
-.side-scrolling--content>ul {
+.slide-content>ul {
 	list-style-type: square;
 	margin-left: 3rem;
 }
-
-.side-scrolling--content>ul>li {
-	/* line-height: 100px; */
-	line-height: 3rem;
-}
-
-
 
 .centered-list-item-content {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
-}
-
-
-/* .side-scrolling--content > h2 {
-	margin-bottom: 2rem;
-} */
-
-.side-scrolling--content {
-	padding: 2rem;
-}
-
-
-.side-scrolling--nav-prev,
-.side-scrolling--nav-next {
-	content: "";
 }
 
 /* Brands */
@@ -289,4 +262,39 @@ html {
 	/* Move the logo a bit closer to the text */
 	left: -1rem;
 
+}
+
+
+
+/* test */
+.grid-cards {
+	display: grid;
+	grid-auto-flow: column;
+	place-items: baseline center;
+}
+
+.grid-cards>* {
+	background-color: white;
+	border-radius: 8px;
+	-webkit-box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.5);
+box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.5);
+}
+
+.grid-cards>ul {
+	margin-left: 2rem;
+}
+
+.subtitle {
+	font-size: 1rem;
+	line-height: 1;
+	margin: 4px;
+}
+
+.title-with-subtitle {
+	display: flex;
+	flex-direction: column;
+
+	align-items: center;
+
+	line-height: 1;
 }
