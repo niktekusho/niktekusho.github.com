@@ -2,13 +2,14 @@
 
 :root {
 	/* Light palette: https://colorhunt.co/palette/ff731dfff7e95f9df71746a2 */
-	--light-accent: #FF731D;
-	--light-background: #FFF7E9;
-	--light-primary: #1746A2;
+	--light-accent: #ff731d;
+	--light-background: #fff7e9;
+	--light-primary: #1746a2;
 	--light-primary-70: #e8edf6;
-	--light-main-text: rgba(40, 40, 40);
-	--light-subtitle-text: rgba(69, 69, 69);
+	--light-main-text: rgba(40 40 40);
+	--light-subtitle-text: rgba(69 69 69);
 
+	/* Layout variables */
 	--sidebar-width: 16em;
 	--main-layout-column-gap: 24px;
 }
@@ -22,8 +23,10 @@
 	margin: 0;
 	padding: 0;
 
-	/* debug */
+	/* debug properties */
+
 	/* overflow: auto; */
+
 	/* border: 1px solid red; */
 }
 
@@ -34,7 +37,6 @@ ul {
 html {
 	/* Enables smooth scrolling  */
 	scroll-behavior: smooth;
-
 	scroll-snap-type: mandatory;
 	scroll-snap-align: center;
 }
@@ -42,10 +44,10 @@ html {
 /* Specific page style */
 
 .container {
-
 	/* Increase global font size */
 	font-size: 1.5rem;
 
+	/* Background color of the page */
 	background-color: var(--light-primary-70);
 
 	/* Grid layout */
@@ -54,7 +56,6 @@ html {
 	align-items: center;
 	justify-items: center;
 	grid-template-columns: [sidebar] var(--sidebar-width) [content] auto;
-
 }
 
 /* Sidebar section */
@@ -71,9 +72,10 @@ html {
 	left: 0;
 	align-self: flex-start;
 
-	/* make the sidebar all screen high */
+	/* Make the sidebar all screen high */
 	height: 100vh;
-	/* take all space given by the grid layout */
+
+	/* Take all space given by the grid layout */
 	width: 100%;
 
 	/* Layout inside the sidebar */
@@ -87,8 +89,13 @@ html {
 	text-decoration: none;
 }
 
+.navbar-item > a {
+	font-size: 1.5rem;
+	color: var(--light-subtitle-text);
+}
+
 .sidebar a:active,
-.sidebar:visited {
+.sidebar a:visited {
 	/* Resets every link style in the sidebar */
 	text-decoration: none;
 }
@@ -106,7 +113,6 @@ html {
 
 	/* Sets link text color */
 	color: var(--light-main-text);
-
 }
 
 .profile-pic {
@@ -120,7 +126,7 @@ html {
 	padding-bottom: 1rem;
 }
 
-.navbar>ul {
+.navbar > ul {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -130,13 +136,6 @@ html {
 	margin: 1rem 0;
 }
 
-.navbar-item>a {
-	font-size: 1.5rem;
-	color: var(--light-subtitle-text);
-
-	padding: 0.5rem;
-}
-
 .footer {
 	/* Layout of the footer */
 	display: flex;
@@ -144,12 +143,13 @@ html {
 	justify-content: center;
 	align-items: center;
 
+	/* Content properties */
 	padding: 1rem;
 	font-size: 1.3rem;
 }
 
 /* Sets padding for every child of the footer */
-.footer>* {
+.footer > * {
 	padding: 8px;
 }
 
@@ -172,6 +172,7 @@ html {
 	padding: 2rem;
 
 	/* TODO might make it hidden in next revs */
+
 	/* overflow-x: auto; */
 }
 
@@ -185,23 +186,20 @@ html {
 
 	/* "Left" horizontal alignment and center vertical alignment */
 	place-items: center flex-start;
-
 	display: grid;
-
 	scroll-snap-align: center;
 	scroll-snap-stop: always;
 }
 
-
 .slides-container--title {
-
-	/* higher vertical padding used as line-height*/
+	/* higher vertical padding used as line-height */
 	padding: 2rem 1rem;
 
 	/* Overrides the default "left" horizontal alignments */
 	justify-self: center;
 
 	/* trying to make it sticky (needs animation to the right margin of the screen) */
+
 	/* position: sticky;
 	top: 0;
 	background-color: var(--light-primary-70);
@@ -222,7 +220,7 @@ html {
 	line-height: 2;
 }
 
-.slide-content>ul {
+.slide-content > ul {
 	list-style-type: square;
 	margin-left: 3rem;
 }
@@ -237,6 +235,7 @@ html {
 
 .brand {
 	height: 2rem;
+
 	/* Make sure the images do not get stretched */
 	object-fit: cover;
 }
@@ -244,13 +243,13 @@ html {
 /* Adjust positioning for some brands to align them to text baseline */
 .brand.spring {
 	position: relative;
-	top: .5rem;
+	top: 0.5rem;
 }
 
 .brand.jooq {
 	position: relative;
-	top: .5rem;
-	margin-right: .5rem;
+	top: 0.5rem;
+	margin-right: 0.5rem;
 }
 
 /* Learning section */
@@ -259,23 +258,16 @@ html {
 	display: grid;
 	grid-auto-flow: column;
 	gap: 1rem;
-
 	place-items: baseline center;
 }
 
 .card {
-
 	display: flex;
 	flex-direction: column;
-
 	padding: 1rem;
-
 	background-color: white;
-
 	border-radius: 8px;
-	-webkit-box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.5);
-	box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.5);
-
+	box-shadow: 2px 2px 4px 0 rgb(0 0 0 / 50%);
 	line-height: 1.5;
 }
 
@@ -284,7 +276,7 @@ html {
 	margin-bottom: 4px;
 }
 
-.card>ul {
+.card > ul {
 	list-style-type: square;
 	margin-left: 3rem;
 }
@@ -296,28 +288,28 @@ html {
 }
 
 .title-with-subtitle {
+	/* Layout of titles with subtitles */
 	display: flex;
 	flex-direction: column;
-
 	align-items: center;
 
+	/* Make titles with subtitles more "dense" */
 	line-height: 1;
 }
-
-
 
 /* Legal stuff */
 
 .brand.gradle {
 	/* Required by https://gradle.com/brand/ */
 	min-width: 100px;
+
 	/* 6 characters plus 2 of the elephant logo */
 	width: 8rem;
 
+	/* Adjust Gradle logo to its parent */
 	position: relative;
-	top: .5rem;
+	top: 0.5rem;
 
 	/* Move the logo a bit closer to the text */
 	left: -1rem;
-
 }

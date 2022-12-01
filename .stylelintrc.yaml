@@ -1,0 +1,12 @@
+# Use default Stylelint recommended configuration for CSS.
+extends:
+- stylelint-config-standard
+
+# Keep alphabetic order plz! :)
+
+rules:
+  # The project uses tabs by default.
+  indentation: tab
+  # Customize the selector class pattern to allow classes like ".card__title"
+  selector-class-pattern: ^([a-z]+[a-z0-9-]*)(__[a-z0-9]+)?$
+

@@ -12,6 +12,9 @@ insert_final_newline = true
 [*.{html,js,css,md}]
 indent_style = tab
 
+[*.{yaml,yml}]
+indent_style = space
+
 [*.{html,css}]
 indent_size = 2
 
