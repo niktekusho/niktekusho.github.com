@@ -29,18 +29,29 @@
 
 <body class="container">
 
+	<!-- This needs to be a sibling of the contact me dialog  -->
+	<input type="checkbox" id="contact-me-trigger" class="visually-hidden" aria-hidden="true" />
+
 	<aside class="sidebar">
 		<a class="header" href="#">
 			<img class="profile-pic" src="assets/profile.jpeg" alt="My profile image." />
 			Nicola Dal Maso
 		</a>
 
+
 		<nav class="navbar">
 			<ul class="navbar--list">
 				<li class="navbar-item"><a href="#experience">Experience</a></li>
 				<li class="navbar-item"><a href="#learn">Learning</a></li>
 				<!-- <li><a href="#">Hobbies</a></li> -->
-				<li class="navbar-item"><a href="https://github.com/niktekusho"><span class="accent-text">Get in touch</span></a></li>
+				<li class="navbar-item">
+					<!-- <a href="https://github.com/niktekusho"> -->
+						<label for="contact-me-trigger" class="accent-text clickable">Get in touch</label>
+					<!-- </a> -->
+				</li>
+				<li class="navbar-item">
+					<a href="modal-dialog.html">take me to the contact me dialog only (debug)</a>
+				</li>
 				<!-- TODO: link to a specific page or using js to display a modal dialog  -->
 			</ul>
 		</nav>
@@ -168,6 +179,16 @@
 			</div>
 		</article>
 	</main>
+
+	<div class="modal">
+		<!-- not-visible by default -->
+		<div class="modal__overlay" role="dialog">
+			<div class="modal__wrap">
+				<label for="modal__trigger"><i class="fa-solid fa-circle-xmark"></i></label>
+				<h2 class="modal__title">Thank you for contacting me</h2>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

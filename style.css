@@ -2,12 +2,14 @@
 
 :root {
 	/* Light palette: https://colorhunt.co/palette/ff731dfff7e95f9df71746a2 */
-	--light-accent: #ff731d;
-	--light-background: #fff7e9;
-	--light-primary: #1746a2;
-	--light-primary-70: #e8edf6;
+	--light-accent: rgb(255 115 29);
+	--light-accent-transparent: rgb(255 115 29 / 50%);
+	--light-background: rgb(255 247 233);
+	--light-primary: rgb(23 70 162);
+	--light-primary-70: rgb(232 237 246);
 	--light-main-text: rgba(40 40 40);
 	--light-subtitle-text: rgba(69 69 69);
+	--light-background-transparent: rgba(255 255 255 / 80%);
 
 	/* Layout variables */
 	--sidebar-width: 16em;
@@ -295,6 +297,115 @@ html {
 
 	/* Make titles with subtitles more "dense" */
 	line-height: 1;
+}
+
+/* Modal Dialogs */
+
+/* Hide modal dialog by default */
+.modal {
+	display: none;
+}
+
+.modal__overlay {
+	/* Constraint dialog's maximum width but let it take space if there is some */
+	max-width: 800px;
+	width: 100%;
+
+	/* UI effects */
+	box-shadow: 2px 2px 4px 0 var(--light-accent-transparent);
+	border: 1px solid var(--light-accent);
+	border-radius: 16px;
+}
+
+.modal__header {
+	padding: 1rem;
+	display: flex;
+	border-bottom: 1px solid var(--light-accent);
+
+	align-items: center;
+}
+
+.modal__header-title {
+	flex: 1;
+}
+
+.modal__content {
+	padding: 1rem;
+
+	/* background-color: var(--light-background); */
+}
+
+.personal-info--group {
+	/* Spacing */
+	margin: 1rem;
+	padding: 1rem;
+
+	/* Border styling */
+	border-color: var(--light-primary);
+	border-radius: 8px;
+
+	/* Layout with 2 columns */
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 2rem;
+	place-items: center stretch;
+}
+
+.personal-info--title {
+	color: var(--light-primary);
+
+	/* Adds horizontal spacing */
+	padding: 0 1rem;
+}
+
+.form-field {
+	font-size: 1.2rem;
+	padding: 0.5rem;
+}
+
+.form-field:focus,
+.form-field:hover {
+	border: 2px solid red;
+}
+
+/* Trigger dialog on button click.
+	 The contact me hidden input element needs to be a SIBLING of the modal dialog
+*/
+#contact-me-trigger:checked ~ .modal {
+	/* Modal layout */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	/* Modal needs to go outside normal layout */
+	position: fixed;
+
+	/* Make the modal fullscreen */
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	/* Make the overlay have a translucid background that covers the page underneath */
+	background-color: var(--light-background-transparent);
+	backdrop-filter: blur(2px);
+}
+
+/* Utility classes */
+
+.clickable {
+	cursor: pointer;
+}
+
+.visually-hidden {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
 }
 
 /* Legal stuff */

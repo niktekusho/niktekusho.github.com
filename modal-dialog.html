@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>Homepage - Nicola Dal Maso</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+
+	<!-- Font Awesome from CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+		integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- Google Fonts from their CDN -->
+	<!-- Fonts using: Lato -->
+	<!-- display=fallback renders a fallback font at first and it's swapped when the font is downloaded. -->
+	<!-- If the font is taking too long to download the fallback font will be used for the lifetime of the page. -->
+	<!-- subset=latin optimizes the requests to Google Fonts CDN by requesting the minimal subset of the font. -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=fallback&subset=latin">
+
+
+	<!-- My CSS -->
+	<link rel="stylesheet" href="style.css">
+
+	<!-- <script src='main.js'></script> -->
+</head>
+
+<body class="container">
+
+	<!-- This needs to be a sibling of the contact me dialog  -->
+	<input type="checkbox" id="contact-me-trigger" class="visually-hidden" aria-hidden="true" checked />
+
+	<div class="modal">
+		<div class="modal__overlay" role="dialog" aria-modal="true">
+			<div class="modal__wrap">
+				<header class="modal__header">
+					<div class="modal__header-title">
+						<h2 class="title">Thank you for your interest!</h2>
+						<p class="subtitle">I'll get back to you ASAP.</p>
+					</div>
+					<label for="contact-me-trigger" class="modal__close clickable"><i class="fa-solid fa-circle-xmark"></i></label>
+				</header>
+				<form action="">
+					<div class="modal__content">
+						<!-- honeypot-->
+
+						<fieldset class="personal-info--group">
+							<legend class="personal-info--title">Your contact information</legend>
+							<label for="name" class="form-label">Name</label>
+							<input type="text" name="name" id="name" class="form-field" placeholder="Your name" required/>
+							<label for="email" class="form-label">Email</label>
+							<input type="email" name="email" id="email" class="form-field" placeholder="Your email" required/>
+						</fieldset>
+
+						<label for="contact-text">Message</label>
+						<textarea name="contact-text" id="contact-text" class="form-field" rows="10"
+							placeholder="Hi, Nicola! ..." required></textarea>
+					</div>
+
+					<div class="modal__actions">
+						<input type="submit" title="test" />
+					</div>
+
+					<footer class="modal__footer">
+						<p aria-hidden="true">
+							<small>
+								Click anywhere on the screen to close this dialog.
+							</small>
+						</p>
+					</footer>
+
+				</form>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+</html>
