@@ -46,11 +46,8 @@
 				<!-- <li><a href="#">Hobbies</a></li> -->
 				<li class="navbar-item">
 					<!-- <a href="https://github.com/niktekusho"> -->
-						<label for="contact-me-trigger" class="accent-text clickable">Get in touch</label>
+					<label for="contact-me-trigger" class="accent-text clickable">Get in touch</label>
 					<!-- </a> -->
-				</li>
-				<li class="navbar-item">
-					<a href="modal-dialog.html">take me to the contact me dialog only (debug)</a>
 				</li>
 				<!-- TODO: link to a specific page or using js to display a modal dialog  -->
 			</ul>
@@ -181,12 +178,48 @@
 	</main>
 
 	<div class="modal">
-		<!-- not-visible by default -->
-		<div class="modal__overlay" role="dialog">
+		<!-- Test -->
+		<label for="contact-me-trigger" class="modal-overlay__close"></label>
+		<div class="modal__overlay" role="dialog" aria-modal="true">
+
 			<div class="modal__wrap">
-				<label for="modal__trigger"><i class="fa-solid fa-circle-xmark"></i></label>
-				<h2 class="modal__title">Thank you for contacting me</h2>
+				<header class="modal__header">
+					<div class="modal__header-title">
+						<h2 class="title">Thank you for your interest!</h2>
+						<p class="subtitle">I'll get back to you ASAP.</p>
+					</div>
+					<label for="contact-me-trigger" class="modal__close clickable"><i
+							class="fa-solid fa-circle-xmark"></i></label>
+				</header>
+				<form action="">
+					<div class="modal__content">
+						<!-- honeypot-->
+
+						<label for="name" class="form-label">Name</label>
+						<input type="text" name="name" id="name" class="form-field" placeholder="Your name" required />
+						<label for="email" class="form-label">Email</label>
+						<input type="email" name="email" id="email" class="form-field" placeholder="Your email" required />
+
+						<label for="contact-text">Message</label>
+						<textarea name="contact-text" id="contact-text" class="form-field" rows="10" placeholder="Hi, Nicola! ..."
+							required></textarea>
+					</div>
+
+
+					<footer class="modal__footer">
+						<p aria-hidden="true" class="modal-hint">
+							Click anywhere on the screen to close this dialog.
+						</p>
+						<div class="modal__actions">
+							<button type="submit" class="button accent-btn">
+								Send<i class="fa-solid fa-paper-plane"></i>
+							</button>
+						</div>
+					</footer>
+
+				</form>
 			</div>
+
 		</div>
 	</div>
 </body>

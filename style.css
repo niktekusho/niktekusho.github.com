@@ -9,11 +9,16 @@
 	--light-primary-70: rgb(232 237 246);
 	--light-main-text: rgba(40 40 40);
 	--light-subtitle-text: rgba(69 69 69);
+	--light-text-700: rgb(96 96 96);
 	--light-background-transparent: rgba(255 255 255 / 80%);
 
 	/* Layout variables */
 	--sidebar-width: 16em;
 	--main-layout-column-gap: 24px;
+
+	/* Gaps and stuff */
+	/* --gap-large: 24; */
+	--border-radius: 8px;
 }
 
 /* Global styles or resets */
@@ -268,7 +273,7 @@ html {
 	flex-direction: column;
 	padding: 1rem;
 	background-color: white;
-	border-radius: 8px;
+	border-radius: var(--border-radius);
 	box-shadow: 2px 2px 4px 0 rgb(0 0 0 / 50%);
 	line-height: 1.5;
 }
@@ -306,6 +311,14 @@ html {
 	display: none;
 }
 
+.modal-overlay__close {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
 .modal__overlay {
 	/* Constraint dialog's maximum width but let it take space if there is some */
 	max-width: 800px;
@@ -314,7 +327,11 @@ html {
 	/* UI effects */
 	box-shadow: 2px 2px 4px 0 var(--light-accent-transparent);
 	border: 1px solid var(--light-accent);
-	border-radius: 16px;
+	border-radius: var(--border-radius);
+}
+
+.modal__wrap {
+	background-color: white;
 }
 
 .modal__header {
@@ -330,25 +347,16 @@ html {
 }
 
 .modal__content {
-	padding: 1rem;
-
-	/* background-color: var(--light-background); */
-}
-
-.personal-info--group {
-	/* Spacing */
-	margin: 1rem;
-	padding: 1rem;
-
-	/* Border styling */
-	border-color: var(--light-primary);
-	border-radius: 8px;
-
 	/* Layout with 2 columns */
 	display: grid;
 	grid-template-columns: auto 1fr;
 	gap: 2rem;
 	place-items: center stretch;
+
+	padding: 2rem;
+	gap: 1rem;
+
+	/* background-color: var(--light-background); */
 }
 
 .personal-info--title {
@@ -360,13 +368,75 @@ html {
 
 .form-field {
 	font-size: 1.2rem;
-	padding: 0.5rem;
+	padding: 1rem;
+}
+
+/* Textarea customizations */
+textarea.form-field {
+	/* Disable resizing */
+	resize: none;
+
+	/* Enable scrollbars if necessary */
+	overflow: auto;
 }
 
 .form-field:focus,
-.form-field:hover {
-	border: 2px solid red;
+.form-field:hover,
+.form-field:active {
+	/* Highlights border fo the current active form input field */
+	border: 2px solid var(--light-primary);
+	border-radius: var(--border-radius);
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+	/* Outline needs to be disabled cause it interferes with border */
+	outline: none;
 }
+
+.modal__footer {
+	display: flex;
+	padding: 0 2rem 2rem;
+	align-items: center;
+}
+
+.modal-hint {
+	flex-grow: 1;
+	color: var(--light-text-700);
+	font-size: 1.2rem;
+	font-style: italic;
+	letter-spacing: 0.05rem;
+	word-spacing: 0.1rem;
+}
+
+/* debug */
+.modal__actions {
+	display: flex;
+	gap: 1rem;
+}
+
+.button {
+	padding: 1rem 2rem;
+	cursor: pointer;
+	display: flex;
+	gap: 1rem;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	font-weight: 500;
+	background-color: var(--light-accent);
+	align-items: center;
+	color: white;
+	border: 0;
+	border-radius: var(--border-radius);
+}
+
+.accent-btn {
+	color: black;
+}
+
+/* Needed since the general rule applies the white background */
+.accent-btn>i {
+	background-color: var(--light-accent);
+}
+
 
 /* Trigger dialog on button click.
 	 The contact me hidden input element needs to be a SIBLING of the modal dialog
